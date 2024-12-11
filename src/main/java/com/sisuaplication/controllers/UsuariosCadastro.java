@@ -65,7 +65,7 @@ public class UsuariosCadastro extends Usuario {
         String query = "SELECT * FROM usuarios WHERE login = ? AND senha = ?";
 
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-             PreparedStatement stmt = conn.prepareStatement(query)) {
+            PreparedStatement stmt = conn.prepareStatement(query)) {
 
             stmt.setString(1, login);
             stmt.setString(2, senha);
@@ -83,7 +83,7 @@ public class UsuariosCadastro extends Usuario {
         String query = "SELECT * FROM usuarios WHERE login = ?";
 
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-             PreparedStatement stmt = conn.prepareStatement(query)) {
+            PreparedStatement stmt = conn.prepareStatement(query)) {
 
             stmt.setString(1, login);
 
@@ -100,7 +100,7 @@ public class UsuariosCadastro extends Usuario {
         String query = "INSERT INTO usuario (login, senha, nome, genero, cpf, idade, email, telefone, endereco) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-             PreparedStatement stmt = conn.prepareStatement(query)) {
+            PreparedStatement stmt = conn.prepareStatement(query)) {
 
             stmt.setString(1, this.getLogin());
             stmt.setString(2, this.getSenha());
@@ -184,7 +184,7 @@ public class UsuariosCadastro extends Usuario {
         String query = "UPDATE usuarios SET nome = ?, genero = ?, cpf = ?, idade = ?, email = ?, telefone = ?, endereco = ? WHERE login = ?";
 
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-             PreparedStatement stmt = conn.prepareStatement(query)) {
+            PreparedStatement stmt = conn.prepareStatement(query)) {
 
             stmt.setString(1, this.getNome());
             stmt.setString(2, this.getGenero());
