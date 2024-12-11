@@ -1,16 +1,10 @@
-package com.sisuaplication.models.Notas;
+package com.sisuaplication.controllers;
 
-
-import java.io.IOException;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
-
-import jakarta.persistence.Id;
+import java.sql.Connection;
 
 public class CalcularNotas {
     private double media, nota1, nota2, nota3, nota4, nota5, mediaPonderada;
@@ -56,6 +50,8 @@ public class CalcularNotas {
         if (mediaPonderada > 0) {
             System.out.println("A média ponderada é: " + mediaPonderada);
         }
+
+        sc.close();                                  
     }
 
     public double getMedia() {
@@ -82,8 +78,9 @@ public class CalcularNotas {
 
 
 
-    private void salvarUsuarioNoBanco() {
-        String query = "INSERT INTO usuario (login, senha, nome, genero, cpf, idade, email, telefone, endereco) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    private void salvarNotaNoBanco() {
+
+        String query = "INSERT INTO NotasDousuario (user_login, matematica, ciencias_da_natureza, linguagens, humanas, redacao) VALUES (?, ?, ?, ?, ?)";
 
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
              PreparedStatement stmt = conn.prepareStatement(query)) {

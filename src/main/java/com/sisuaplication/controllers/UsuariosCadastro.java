@@ -1,8 +1,10 @@
-package com.sisuaplication.models.sistemalogin;
+package com.sisuaplication.controllers;
 
 import java.sql.*;
 //import java.util.ArrayList;
 import java.util.Scanner;
+
+import com.sisuaplication.models.sistemalogin.Usuario;
 
 public class UsuariosCadastro extends Usuario {
     private static final String DB_URL = "jdbc:sqlserver://localhost:1433;database=Sisu_Api;encrypt=true;trustServerCertificate=true";

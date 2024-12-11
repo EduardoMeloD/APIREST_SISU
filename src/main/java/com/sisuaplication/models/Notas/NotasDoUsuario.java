@@ -1,5 +1,6 @@
 package com.sisuaplication.models.Notas;
 
+import com.sisuaplication.controllers.CalcularNotas;
 import com.sisuaplication.models.sistemalogin.Usuario;
 
 import jakarta.persistence.Column;
@@ -21,7 +22,7 @@ public class NotasDoUsuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", unique = true)
-    private long id;
+    private Long id;
 
     @ManyToOne
     @JoinColumn(name = "user_login", nullable = false, updatable = false)

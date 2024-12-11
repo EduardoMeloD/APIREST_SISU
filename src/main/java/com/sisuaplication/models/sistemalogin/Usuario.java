@@ -1,5 +1,7 @@
 package com.sisuaplication.models.sistemalogin;
 
+import com.sisuaplication.controllers.UsuariosCadastro;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,7 +20,6 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="id", unique = true)
-
     private Long id;
     
     @Column(name = "login", length = 80, nullable = false, unique = true)

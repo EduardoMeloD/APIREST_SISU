@@ -1,4 +1,4 @@
-package com.sisuaplication.models.cursos;
+package com.sisuaplication.controllers;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
