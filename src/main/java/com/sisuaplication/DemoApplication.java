@@ -11,7 +11,7 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 		UsuariosCadastro user = new UsuariosCadastro();
 
-		user.adicionarNovoUsuario("ruan", "ruan1234");
+		//user.adicionarNovoUsuario("ribamar", "123");
 
 	}
 

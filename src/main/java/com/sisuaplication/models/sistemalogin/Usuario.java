@@ -31,12 +31,12 @@ public class Usuario {
     @NotEmpty(groups = UsuariosCadastro.class)
     private String senha;
 
-    @Column(name = "nome", length = 100, nullable = false, unique = true)
+    @Column(name = "nome", length = 100, nullable = false)
     @NotNull(groups = UsuariosCadastro.class)
     @NotEmpty(groups = UsuariosCadastro.class)
     private String nome;
 
-    @Column(name = "idade", length = 3, nullable = false, unique = true)
+    @Column(name = "idade", length = 3, nullable = false)
     @NotNull(groups = UsuariosCadastro.class)
     @NotEmpty(groups = UsuariosCadastro.class)
     private String idade;
@@ -46,7 +46,7 @@ public class Usuario {
     @NotEmpty(groups = UsuariosCadastro.class)
     private String telefone;
 
-    @Column(name = "endereco", length = 100, nullable = false, unique = true)
+    @Column(name = "endereco", length = 100, nullable = false)
     @NotNull(groups = UsuariosCadastro.class)
     @NotEmpty(groups = UsuariosCadastro.class)
     private String endereco;
@@ -56,7 +56,7 @@ public class Usuario {
     @NotEmpty(groups = UsuariosCadastro.class)
     private String email;
 
-    @Column(name = "genero", length = 1, nullable = false, unique = true)
+    @Column(name = "genero", length = 1, nullable = false)
     @NotNull(groups = UsuariosCadastro.class)
     @NotEmpty(groups = UsuariosCadastro.class)
     private String genero;

@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class UsuariosCadastro extends Usuario {
     private static final String DB_URL = "jdbc:sqlserver://localhost:1433;database=Sisu_Api;encrypt=true;trustServerCertificate=true";
     private static final String DB_USER = "sa";
-    private static final String DB_PASSWORD = "2+2Ubuntu24";
+    private static final String DB_PASSWORD = "thones434";
 
     public String escolha;
     public String novoDado;
