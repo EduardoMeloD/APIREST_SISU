@@ -83,7 +83,7 @@ public class CalcularNotas {
         String query = "INSERT INTO NotasDousuario (user_login, matematica, ciencias_da_natureza, linguagens, humanas, redacao) VALUES (?, ?, ?, ?, ?)";
 
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-             PreparedStatement stmt = conn.prepareStatement(query)) {
+            PreparedStatement stmt = conn.prepareStatement(query)) {
 
                 stmt.setDouble(1, this.getNota1());
                 stmt.setDouble(2, this.getNota2());
