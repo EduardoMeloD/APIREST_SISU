@@ -30,30 +30,23 @@ public class NotasDoUsuario {
 
     @Column(name = "matematica", length = 6, nullable = false)
     @NotBlank(groups = CalcularNotas.class )
-    private String matematica;
+    private int matematica;
 
     
     @Column(name = "ciencias_da_natureza", length = 6, nullable = false)
     @NotBlank(groups = CalcularNotas.class )
-    private String cienciasDaNatureza;
+    private int cienciasDaNatureza;
 
     @Column(name = "linguagens", length = 6, nullable = false)
     @NotBlank(groups = CalcularNotas.class )
-    private String linguagens;
+    private int linguagens;
 
     @Column(name = "humanas", length = 6, nullable = false)
     @NotBlank(groups = CalcularNotas.class )
-    private String humanas;
+    private int humanas;
 
     @Column(name = "redacao", length = 6, nullable = false)
     @NotBlank(groups = CalcularNotas.class )
-    private String redacao;
-
-    @Column(name = "media", length = 6, nullable = false)
-    @NotBlank(groups = CalcularNotas.class )
-    private String media;
-
-
-
+    private int redacao;
 
 }

@@ -57,7 +57,7 @@ public class Usuario {
     @NotEmpty(groups = UsuariosCadastro.class)
     private String email;
 
-    @Column(name = "genero", length = 1, nullable = false)
+    @Column(name = "genero", length = 22, nullable = false)
     @NotNull(groups = UsuariosCadastro.class)
     @NotEmpty(groups = UsuariosCadastro.class)
     private String genero;

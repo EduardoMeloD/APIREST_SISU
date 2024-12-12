@@ -9,7 +9,7 @@ import com.sisuaplication.models.sistemalogin.Usuario;
 public class UsuariosCadastro extends Usuario {
     private static final String DB_URL = "jdbc:sqlserver://localhost:1433;database=Sisu_Api;encrypt=true;trustServerCertificate=true";
     private static final String DB_USER = "sa";
-    private static final String DB_PASSWORD = "thones434";
+    private static final String DB_PASSWORD = "2+2Ubuntu24";
 
     public String escolha;
     public String novoDado;
@@ -38,6 +38,8 @@ public class UsuariosCadastro extends Usuario {
         this.setTelefone(sc.nextLine());
         System.out.println("Digite seu endereço: ");
         this.setEndereco(sc.nextLine());
+
+        sc.close();
     }
 
     public String toString() {
@@ -62,7 +64,7 @@ public class UsuariosCadastro extends Usuario {
     }
 
     public boolean verificarUsuario(String login, String senha) {
-        String query = "SELECT * FROM usuarios WHERE login = ? AND senha = ?";
+        String query = "SELECT * FROM usuario WHERE login = ? AND senha = ?";
 
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
             PreparedStatement stmt = conn.prepareStatement(query)) {
@@ -80,7 +82,7 @@ public class UsuariosCadastro extends Usuario {
     }
 
     public boolean verificarUsuarioExistente(String login) {
-        String query = "SELECT * FROM usuarios WHERE login = ?";
+        String query = "SELECT * FROM usuario WHERE login = ?";
 
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
             PreparedStatement stmt = conn.prepareStatement(query)) {
@@ -178,6 +180,8 @@ public class UsuariosCadastro extends Usuario {
         } else {
             System.out.println("Nenhum dado foi alterado.");
         }
+
+        sc.close();
     }
 
     private void atualizarUsuarioNoBanco() {
@@ -200,5 +204,10 @@ public class UsuariosCadastro extends Usuario {
         } catch (SQLException e) {
             System.out.println("Erro ao atualizar usuário no banco: " + e.getMessage());
         }
+    }
+
+    public UsuariosCadastro[] getUsuarios() {
+    
+        throw new UnsupportedOperationException("Unimplemented method 'getUsuarios'");
     }
 }

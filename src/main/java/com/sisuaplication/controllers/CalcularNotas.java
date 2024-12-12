@@ -3,6 +3,7 @@ package com.sisuaplication.controllers;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 import java.sql.Connection;
 
@@ -10,7 +11,7 @@ public class CalcularNotas {
     private double media, nota1, nota2, nota3, nota4, nota5, mediaPonderada;
     private static final String DB_URL = "jdbc:sqlserver://localhost:1433;database=Sisu_Api;encrypt=true;trustServerCertificate=true";
     private static final String DB_USER = "sa";
-    private static final String DB_PASSWORD = "thones434";
+    private static final String DB_PASSWORD = "2+2Ubuntu24";
     
 
  
@@ -18,7 +19,8 @@ public class CalcularNotas {
     public double calcularNotas(double nota1, double nota2, double nota3, double nota4, double nota5) {
     
         media = (nota1 + nota2 + nota3 + nota4 + nota5)/5;
-
+        
+        salvarNotaNoBanco();
         return media;
         
         
@@ -44,12 +46,15 @@ public class CalcularNotas {
         System.out.println("Digite sua nota de redação:");
         nota5 = sc.nextDouble();
 
+
         
 
         mediaPonderada = calcularNotas(nota1, nota2, nota3, nota4, nota5);
         if (mediaPonderada > 0) {
             System.out.println("A média ponderada é: " + mediaPonderada);
         }
+
+   
 
         sc.close();                                  
     }
@@ -80,7 +85,7 @@ public class CalcularNotas {
 
     private void salvarNotaNoBanco() {
 
-        String query = "INSERT INTO NotasDousuario (user_login, matematica, ciencias_da_natureza, linguagens, humanas, redacao) VALUES (?, ?, ?, ?, ?)";
+        String query = "INSERT INTO Notas_do_usuario (user_login, matematica, ciencias_da_natureza, linguagens, humanas, redacao) VALUES (?, ?, ?, ?, ?)";
 
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
             PreparedStatement stmt = conn.prepareStatement(query)) {
@@ -90,13 +95,19 @@ public class CalcularNotas {
                 stmt.setDouble(3, this.getNota3());
                 stmt.setDouble(4, this.getNota4());
                 stmt.setDouble(5, this.getNota5());
-                stmt.setDouble(6, this.getmedia());
 
             stmt.executeUpdate();
 
         } catch (SQLException e) {
             System.out.println("Erro ao salvar usuário no banco: " + e.getMessage());
         }
+    }
+
+
+
+    public List<String> CarregarDados(String campus) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'CarregarDados'");
     }
 
 }
