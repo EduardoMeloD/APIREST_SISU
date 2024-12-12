@@ -1,6 +1,5 @@
 package com.sisuaplication;
 import com.sisuaplication.controllers.CalcularNotas;
-import com.sisuaplication.controllers.ListarCursos;
 import com.sisuaplication.controllers.UsuariosCadastro;
 import com.sisuaplication.models.sistemalogin.Usuario;
 import com.sisuaplication.view.MenuPrincipal;
@@ -45,12 +44,8 @@ public class SisuMainapplication {
 							subOpcao = tela.Exibirtela();
 
 							switch (subOpcao) {
+								
 								case "1":
-									ListarCursos listar = new ListarCursos();
-									listar.listarCursosPorCampus();
-									break;
-
-								case "2":
 									Scanner sc = new Scanner(System.in);
 									System.out.println("Calcule sua média ponderada!!!");
 								
@@ -81,7 +76,7 @@ public class SisuMainapplication {
 									}
 									break;
 
-								case "3":
+								case "2":
 									if (login.equals(login)) {
 										System.out.println("\nInformações do usuário:");
 										System.out.println("Nome: " + user.getNome());
@@ -95,7 +90,7 @@ public class SisuMainapplication {
 									
 									break;
 
-								case "4":
+								case "3":
 									System.out.println("atualize suas informaçoes");
 									
 									if (user.getLogin().equals(login)) {
@@ -105,7 +100,7 @@ public class SisuMainapplication {
 									
 									break;
 
-								case "5":
+								case "4":
 									System.out.println("Saindo do sistema...");
 									sair = true;
 									break;
@@ -114,7 +109,7 @@ public class SisuMainapplication {
 									System.out.println("\nOpção inválida!");
 									break;
 							}
-						} while (!subOpcao.equals("5"));
+						} while (!subOpcao.equals("4"));
 					} else {
 						System.out.println("\nUsuário não encontrado!");
 					}
